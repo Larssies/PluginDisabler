@@ -1,6 +1,6 @@
 # PluginDisabler
 
-A Simple plugin that allows players to disable commands in Minecraft
+A Simple plugin that allows players to disable/block commands in Minecraft
 
 How do I use it?
 
