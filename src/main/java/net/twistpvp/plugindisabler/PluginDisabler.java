@@ -2,6 +2,7 @@ package net.twistpvp.plugindisabler;
 
 import net.twistpvp.plugindisabler.commands.AddHidedCommand;
 import net.twistpvp.plugindisabler.events.ChatEvent;
+import net.twistpvp.plugindisabler.events.GUIEvent;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,8 +19,8 @@ public final class PluginDisabler extends JavaPlugin {
         createConfig(config);
 
         getCommand("pluginhider").setExecutor(new AddHidedCommand());
-
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
+        getServer().getPluginManager().registerEvents(new GUIEvent(), this);
 
     }
 
