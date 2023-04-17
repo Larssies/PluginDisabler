@@ -2,7 +2,9 @@
 
 A simple plugin that allows players to disable/block commands in Minecraft
 
-Compatible with commands that use multiple arguments! 
+Compatible with commands that use multiple arguments!
+
+Config included.
 
 How do I use it?
 
