@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PluginDisabler:jar">
+    <output-path>$USER_HOME$/Downloads</output-path>
+    <root id="archive" name="PluginDisabler.jar">
+      <element id="module-output" name="PluginDisabler" />
+    </root>
+  </artifact>
+</component>
