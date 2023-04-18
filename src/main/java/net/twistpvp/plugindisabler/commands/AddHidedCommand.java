@@ -16,11 +16,11 @@ public class AddHidedCommand implements CommandExecutor {
             p = (Player) commandSender;
 
             if(p.hasPermission("pluginhider.admin")) {
-                if(args.length != 1) {
-                    p.sendMessage(ChatColor.RED + "Usage: /pluginhider <command>\nWithout the slash!");
+                if(args.length < 1) {
+                    p.sendMessage(ChatColor.RED + "Usage: /pluginhider help");
                 } else {
-                    String msg = args[0];
-                    if(!args[0].equalsIgnoreCase("gui") || !args[0].equalsIgnoreCase("help")) {
+                    if(args[0].equalsIgnoreCase("add")) {
+                        String msg = args[1];
                         if(Storage.disabledCommands.contains(msg)) {
                             p.sendMessage(ChatColor.RED + "This command is already on the block list!");
                         } else {
@@ -38,6 +38,10 @@ public class AddHidedCommand implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph gui &7Allows you to manage commands via a GUI"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph add <command> &7Allows you to add commands to the block list"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph reload &7Allows you to reload the config file"));
+                    } else {
+                        if(!args[0].equalsIgnoreCase("help") && !args[0].equalsIgnoreCase("gui") && !args[0].equalsIgnoreCase("add")) {
+                            p.sendMessage(ChatColor.RED + "Usage: /pluginhider help");
+                        }
                     }
                 }
             } else {
