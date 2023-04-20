@@ -3,6 +3,8 @@ package net.twistpvp.plugindisabler;
 import net.twistpvp.plugindisabler.commands.PluginHiderCommand;
 import net.twistpvp.plugindisabler.events.ChatEvent;
 import net.twistpvp.plugindisabler.events.GUIEvent;
+import net.twistpvp.plugindisabler.update.UpdateChecker;
+import net.twistpvp.plugindisabler.update.UpdateMessageOnJoin;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,7 +23,20 @@ public final class PluginDisabler extends JavaPlugin {
         getCommand("pluginhider").setExecutor(new PluginHiderCommand(this));
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         getServer().getPluginManager().registerEvents(new GUIEvent(), this);
+        getServer().getPluginManager().registerEvents(new UpdateMessageOnJoin(this), this);
 
+        if(config.getBoolean("check-for-updates")) {
+            getLogger().info("Checking for updates...");
+
+            new UpdateChecker(this, 1234).getVersion(version -> {
+                if(getDescription().getVersion().equals(version)) {
+                    getLogger().info("Plugin is up to date!");
+                } else {
+                    getLogger().info("There is a new update available on Spigot!");
+                    getLogger().info("Check it out here: https://api.spigotmc.org/legacy/update.php?resource=");
+                }
+            });
+        }
     }
 
     @Override
@@ -35,6 +50,10 @@ public final class PluginDisabler extends JavaPlugin {
         Storage.disabledCommands.addAll(disabledCommands);
         if(!config.contains("message")) {
             config.set("message", "&cYou are not allowed to execute this command!");
+            saveConfig(config);
+        }
+        if(!config.contains("check-for-updates")) {
+            config.set("check-for-updates", true);
             saveConfig(config);
         }
     }

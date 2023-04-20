@@ -3,15 +3,11 @@ package net.twistpvp.plugindisabler.commands;
 import net.twistpvp.plugindisabler.GUIs;
 import net.twistpvp.plugindisabler.PluginDisabler;
 import net.twistpvp.plugindisabler.Storage;
-import net.twistpvp.plugindisabler.github.GitHub;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class PluginHiderCommand implements CommandExecutor {
 
@@ -57,11 +53,7 @@ public class PluginHiderCommand implements CommandExecutor {
                         }
                     }
                     if(args[0].equalsIgnoreCase("help")) {
-
-                        Path repoPath = Paths.get("github.com/Larssies/PluginDisabler.git");
-                        String version = GitHub.getCommitVersion(repoPath);
-
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lPlugin Hider &7&ov" + version));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lPlugin Hider &7&ov1.0"));
                         p.sendMessage("");
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph help &7Gives you this page again"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph gui &7Allows you to manage commands via a GUI"));
