@@ -1,5 +1,5 @@
 name: PluginDisabler
-version: '${project.version}'
+version: 4.6.2
 main: net.twistpvp.plugindisabler.PluginDisabler
 api-version: 1.16
 permissions:

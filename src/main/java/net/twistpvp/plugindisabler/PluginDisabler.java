@@ -28,7 +28,7 @@ public final class PluginDisabler extends JavaPlugin {
         if(config.getBoolean("check-for-updates")) {
             getLogger().info("Checking for updates...");
 
-            new UpdateChecker(this, 1234).getVersion(version -> {
+            new UpdateChecker(this, 19254).getVersion(version -> {
                 if(getDescription().getVersion().equals(version)) {
                     getLogger().info("Plugin is up to date!");
                 } else {
