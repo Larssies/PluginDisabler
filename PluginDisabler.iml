@@ -34,5 +34,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-tree:8.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-analysis:8.0.1" level="project" />
     <orderEntry type="library" name="spigot-1.8.8-R0.1-SNAPSHOT-latest (3)" level="project" />
+    <orderEntry type="library" name="org.eclipse.jgit-6.5.0.202303070854-r" level="project" />
   </component>
 </module>

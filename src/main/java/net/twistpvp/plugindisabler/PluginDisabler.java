@@ -18,7 +18,7 @@ public final class PluginDisabler extends JavaPlugin {
 
         createConfig(config);
 
-        getCommand("pluginhider").setExecutor(new AddHidedCommand());
+        getCommand("pluginhider").setExecutor(new AddHidedCommand(this));
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         getServer().getPluginManager().registerEvents(new GUIEvent(), this);
 
