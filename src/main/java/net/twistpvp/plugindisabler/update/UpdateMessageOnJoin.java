@@ -20,7 +20,7 @@ public class UpdateMessageOnJoin implements Listener {
         Player p = e.getPlayer();
 
         if(plugin.getConfig().getBoolean("check-for-updates")) {
-            if(p.isOp()) {
+            if(p.hasPermission("pluginhider.admin")) {
                 new UpdateChecker(plugin, 1234).getVersion(version -> {
                     if(!plugin.getDescription().getVersion().equals(version)) {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "[PluginDisabler] &cThere is a new update available on Spigot!"));
