@@ -43,6 +43,10 @@ public class PluginHiderCommand implements CommandExecutor {
                         plugin.reloadConfig();
                         p.sendMessage(ChatColor.GREEN + "Successfully reloaded the config file!");
                     }
+                    if(args[0].equalsIgnoreCase("clear")) {
+                        Storage.disabledCommands.clear();
+                        p.sendMessage(ChatColor.GREEN + "Successfully removed all the commands from the list!");
+                    }
                     if(args[0].equalsIgnoreCase("remove")) {
                         String msg = args[1];
                         if(!Storage.disabledCommands.contains(msg)) {
@@ -53,16 +57,17 @@ public class PluginHiderCommand implements CommandExecutor {
                         }
                     }
                     if(args[0].equalsIgnoreCase("help")) {
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lPlugin Hider &7&ov1.0"));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lPlugin Disabler &7&ov1.0"));
                         p.sendMessage("");
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph help &7Gives you this page again"));
-                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph gui &7Allows you to manage commands via a GUI"));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph gui &7Allows you to manage commands via a GUI &f[BETA]"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph add <command> &7Allows you to add commands to the block list"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph remove <command> &7Allows you to remove commands from the block list"));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph clear &7Allows you to remove all the commands from the block list"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph reload &7Allows you to reload the config file"));
                     } else {
                         if(!args[0].equalsIgnoreCase("help") && !args[0].equalsIgnoreCase("gui") && !args[0].equalsIgnoreCase("add") && !args[0].equalsIgnoreCase("reload")
-                        && !args[0].equalsIgnoreCase("remove")) {
+                        && !args[0].equalsIgnoreCase("remove") && !args[0].equalsIgnoreCase("clear")) {
                             p.sendMessage(ChatColor.RED + "Usage: /pluginhider help");
                         }
                     }
