@@ -22,7 +22,7 @@ public final class PluginDisabler extends JavaPlugin {
 
         getCommand("pluginhider").setExecutor(new PluginHiderCommand(this));
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
-        getServer().getPluginManager().registerEvents(new GUIEvent(), this);
+        getServer().getPluginManager().registerEvents(new GUIEvent(this), this);
         getServer().getPluginManager().registerEvents(new UpdateMessageOnJoin(this), this);
 
         if(config.getBoolean("check-for-updates")) {
