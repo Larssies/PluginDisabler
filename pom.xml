@@ -61,6 +61,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>jgit-repository</id>
+            <url>https://repo.eclipse.org/content/groups/releases/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -69,6 +73,12 @@
             <artifactId>paper-api</artifactId>
             <version>1.16.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.eclipse.jgit/org.eclipse.jgit -->
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>6.5.0.202303070854-r</version>
         </dependency>
     </dependencies>
 </project>

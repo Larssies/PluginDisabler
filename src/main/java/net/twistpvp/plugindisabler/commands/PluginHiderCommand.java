@@ -13,11 +13,11 @@ import org.bukkit.entity.Player;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class AddHidedCommand implements CommandExecutor {
+public class PluginHiderCommand implements CommandExecutor {
 
     PluginDisabler plugin;
 
-    public AddHidedCommand(PluginDisabler plugin) {
+    public PluginHiderCommand(PluginDisabler plugin) {
         this.plugin = plugin;
     }
 
@@ -58,7 +58,7 @@ public class AddHidedCommand implements CommandExecutor {
                     }
                     if(args[0].equalsIgnoreCase("help")) {
 
-                        Path repoPath = Paths.get("https://github.com/Larssies/PluginDisabler.git");
+                        Path repoPath = Paths.get("github.com/Larssies/PluginDisabler.git");
                         String version = GitHub.getCommitVersion(repoPath);
 
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lPlugin Hider &7&ov" + version));
