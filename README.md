@@ -1,4 +1,4 @@
-# PluginDisabler
+# CommandBlocker
 
 Plugin Disabler is a Bukkit/Spigot plugin that allows server administrators to block specific commands from being executed by players.
 
