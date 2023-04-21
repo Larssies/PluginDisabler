@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PluginDisabler.iml" filepath="$PROJECT_DIR$/PluginDisabler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommandBlocker.iml" filepath="$PROJECT_DIR$/CommandBlocker.iml" />
     </modules>
   </component>
 </project>

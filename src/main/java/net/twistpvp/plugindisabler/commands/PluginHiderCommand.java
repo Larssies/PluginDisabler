@@ -37,7 +37,8 @@ public class PluginHiderCommand implements CommandExecutor {
                         }
                     }
                     if(args[0].equalsIgnoreCase("gui")) {
-                        GUIs.openBlockedList(p);
+                        //GUIs.openBlockedList(p);
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c[Command Blocker] This is still in &fBETA &cand is being worked on, please wait until it is added to use this!"));
                     }
                     if(args[0].equalsIgnoreCase("reload")) {
                         plugin.reloadConfig();

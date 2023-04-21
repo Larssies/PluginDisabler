@@ -33,7 +33,7 @@ public final class PluginDisabler extends JavaPlugin {
                     getLogger().info("Plugin is up to date!");
                 } else {
                     getLogger().info("There is a new update available on Spigot!");
-                    getLogger().info("Check it out here: https://api.spigotmc.org/legacy/update.php?resource=");
+                    getLogger().info("Check it out here: https://www.spigotmc.org/resources/command-blocker.109398/");
                 }
             });
         }
