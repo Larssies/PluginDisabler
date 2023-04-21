@@ -47,6 +47,15 @@ public class PluginHiderCommand implements CommandExecutor {
                         Storage.disabledCommands.clear();
                         p.sendMessage(ChatColor.GREEN + "Successfully removed all the commands from the list!");
                     }
+                    if(args[0].equalsIgnoreCase("logs")) {
+                        if(Storage.logMode.contains(p.getUniqueId())) {
+                            Storage.logMode.remove(p.getUniqueId());
+                            p.sendMessage(ChatColor.RED + "You have disabled the logs!");
+                        } else {
+                            Storage.logMode.add(p.getUniqueId());
+                            p.sendMessage(ChatColor.GREEN + "You have enabled the logs!");
+                        }
+                    }
                     if(args[0].equalsIgnoreCase("remove")) {
                         String msg = args[1];
                         if(!Storage.disabledCommands.contains(msg)) {
@@ -64,10 +73,11 @@ public class PluginHiderCommand implements CommandExecutor {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph add <command> &7Allows you to add commands to the block list"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph remove <command> &7Allows you to remove commands from the block list"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph clear &7Allows you to remove all the commands from the block list"));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph logs &7Allows you to view the log when a player types a blocked command in chat"));
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c/ph reload &7Allows you to reload the config file"));
                     } else {
                         if(!args[0].equalsIgnoreCase("help") && !args[0].equalsIgnoreCase("gui") && !args[0].equalsIgnoreCase("add") && !args[0].equalsIgnoreCase("reload")
-                        && !args[0].equalsIgnoreCase("remove") && !args[0].equalsIgnoreCase("clear")) {
+                        && !args[0].equalsIgnoreCase("remove") && !args[0].equalsIgnoreCase("clear") && !args[0].equalsIgnoreCase("logs")) {
                             p.sendMessage(ChatColor.RED + "Usage: /pluginhider help");
                         }
                     }

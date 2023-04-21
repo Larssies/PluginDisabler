@@ -2,6 +2,7 @@ package net.twistpvp.plugindisabler.events;
 
 import net.twistpvp.plugindisabler.PluginDisabler;
 import net.twistpvp.plugindisabler.Storage;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,6 +25,13 @@ public class ChatEvent implements Listener {
 
         if (Storage.disabledCommands.contains(command) && !player.hasPermission("pluginhider.admin")) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+            for(Player p : Bukkit.getOnlinePlayers()) {
+                if(p.hasPermission("pluginhider.admin")) {
+                    if(Storage.logMode.contains(p.getUniqueId())) {
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', "&b[S] &7" + player.getName() + " &chas tried to execute &f/" + command));
+                    }
+                }
+            }
             event.setCancelled(true);
         }
     }
