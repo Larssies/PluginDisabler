@@ -1,24 +1,36 @@
-# PluginDisabler
+# CommandBlocker
 
-A simple plugin that allows players to disable/block commands in Minecraft
+Plugin Disabler is a Bukkit/Spigot plugin that allows server administrators to block specific commands from being executed by players.
 
-Compatible with commands that use multiple arguments!
+Features
 
-Config included.
+- Blocks specific commands from being executed by players
+- GUI for managing blocked commands (in beta)
+- Log of blocked commands for server administrators to review
+- Permission system to control who can manage blocked commands
 
-How do I use it?
+Installation
+Download the latest version of Plugin Disabler from the releases page.
+Place the downloaded plugin file in your server's plugins folder.
+Start or restart your server.
 
-1. Go to the releases page
-2. download the latest version
-3. drag the latest version into your "plugins" folder of your server
-4. restart your server
-5. execute the command "/pluginhider (command)" ingame to disable any commands, please make sure you don't put the slash when entering the command!
-6. Done! That command has been blocked.
+Usage
+To use Plugin Disabler, simply enter any of the following commands in the server console or as a player with the plugindisabler.admin permission:
+
+- /ph help - Gives you a list of available commands and their descriptions
+- /ph gui - Opens a GUI for managing blocked commands (in beta)
+- /ph add (command) - Adds a command to the block list
+- /ph remove (command) - Removes a command from the block list
+- /ph clear - Removes all commands from the block list
+- /ph logs - Shows a log of blocked commands
+- /ph reload - Reloads the config file
 
 Permissions
-- pluginhider.admin (Allows admins to execute the command and see the original message of the command)
 
-Commands
-- /pluginhider (command)
+The only permission required to use Plugin Disabler is plugindisabler.admin, which allows the player to manage blocked commands.
 
-Aliases: ph
+Notes
+
+Plugin Disabler is currently in beta and should be used with caution.
+While Plugin Disabler is designed to block only commands, it may also block certain plugin functionality that is triggered by commands.
+Plugin Disabler may not be compatible with all plugins and configurations.
