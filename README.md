@@ -19,8 +19,8 @@ To use Plugin Disabler, simply enter any of the following commands in the server
 
 - /ph help - Gives you a list of available commands and their descriptions
 - /ph gui - Opens a GUI for managing blocked commands (in beta)
-- /ph add <command> - Adds a command to the block list
-- /ph remove <command> - Removes a command from the block list
+- /ph add (command) - Adds a command to the block list
+- /ph remove (command) - Removes a command from the block list
 - /ph clear - Removes all commands from the block list
 - /ph logs - Shows a log of blocked commands
 - /ph reload - Reloads the config file
